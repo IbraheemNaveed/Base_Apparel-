@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<style>
+    * {
+        
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+</style>
+<body class=" bg-[url('./background.svg')] font-sans">
+    <div class=" flex flex-col sm:flex-row ">
+
+
+        <div class=" bg-[url[('./background.svg')] flex flex-col mx-12 mt-8 gap-6 "> 
+            <div><img src="./logo.svg" /></div>
+            <div class=" mt-6 "><h1 class=" font-thin text-[#f96262]  text-7xl ">WE'RE  </h1>
+            <h1 class=" text-7xl ">COMING</h1>
+            <H1 class=" text-7xl ">SOON</H1>
+            <P class=" py-8 text-[#ee8c8c] ">Hello fellows shoppers! We're currently building our new fashion store. Add your email below to stay-to-date with announcements and our lunch deals. </P>
+            
+            
+            </div>
+           
+   
+                <div class="relative flex max-w-fit">
+                    <input  class=" px-5 sm:px-28 py-3 border-2 rounded-3xl border-[#ee8c8c] "  type="email"  id="email"  placeholder=" Email address" />
+                   
+             <button  onclick="emailValidation()"  class=" bg-[#ee8c8c]  px-10 py-3 h-[52px] hover:shadow-2xl hover:bg-orange-300 rounded-full absolute right-0">
+               
+                <img  src="./submit.svg" /> 
+            </button>
+            <img id="erroricon" class=" absolute right-32 top-[14px] opacity-0" src="./error.svg" />
+             
+             </div>
+             <div id="error">
+              
+             </div>
+            
+
+
+
+
+        </div>
+        <div class="   ">
+            <img src="./hero-desktop.jpg" />
+        </div>
+    </div>
+    <script>
+         const emailElement = document.querySelector('#email')  ;
+         console.log(emailElement)
+         console.log('f')
+//  emailElement.addEventListener('input', emailValidation)
+function emailValidation(){
+// console.log(e.target.value);
+const emailValue = emailElement.value;
+if (emailValue == "") {
+    console.log("error occoured")
+    showError();
+}
+else{
+    console.log("email saved")
+}
+}
+const errorElem=document.getElementById("error");
+const errorpic=document.getElementById("erroricon")
+ function showError(){
+  
+errorpic.classList.remove('opacity-0');
+    errorElem.innerHTML= ` <p   class="text-[#f26262] text-sm px-4 -mt-5 ">Please provide valid email</p>`
+
+ }
+
+    </script>
+
+</body>
+</html>
+
